@@ -2,7 +2,7 @@
  * @Author: TomChen
  * @Date:   2019-08-09 15:14:36
  * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-21 15:13:27
+ * @Last Modified time: 2019-08-21 15:57:08
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -26,7 +26,7 @@ class ProductDetail extends Component {
         if(this.state.productId){
           this.props.getProductDetail(this.state.productId)
         }
-    }
+    }  
     render() {
         const {
           categoryName,
@@ -35,18 +35,16 @@ class ProductDetail extends Component {
           price,
           stock,
           detail,
-          mainImage,//封面图片
-          images,//商品图片          
+          mainImage,
+          images,     
         } = this.props
-
         let imagesBox = null
-
         if(images){
-            imagesBox = images.split(',').map((url,index)=>{
-                return (
-                    <li key={index}><img src={url} /></li>
-                )
-            })
+          imagesBox = images.split(',').map((url,index)=>{
+            return (<li key={index}>
+              <img src={url} />
+            </li>)
+          })
         }
         return (
             <Layout>
@@ -58,37 +56,35 @@ class ProductDetail extends Component {
                 <div className="content">
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} >
                         <Form.Item label="商品分类">
-                            <Input value={categoryName}  disabled={true} />
-                        </Form.Item>  
-
+                          <Input value={categoryName}  disabled={true} />
+                        </Form.Item>                    
                         <Form.Item label="商品名称">
-                            <Input value={name}  disabled={true} />
+                          <Input value={name}  disabled={true} />
                         </Form.Item>
-
                         <Form.Item label="商品描述">
-                            <Input value={description}  disabled={true} />
+                          <Input value={description}  disabled={true} />
                         </Form.Item>
-
                         <Form.Item label="商品价格">
-                            <InputNumber value={price}  disabled={true} />
+                          <InputNumber value={price}  disabled={true} />
                         </Form.Item>
-
                         <Form.Item label="商品库存">
-                            <InputNumber  value={stock}  disabled={true} />
+                          <InputNumber  value={stock}  disabled={true} />
                         </Form.Item>
-
-                        <Form.Item label="封面图片">
+                        <Form.Item 
+                          label="封面图片"
+                        >
                           {
+
                             mainImage ? <ul className="imgBox"><li><img src={mainImage} /></li></ul> : null
                           }
                         </Form.Item>
-
-                        <Form.Item label="商品图片">
-                            <ul className="imgBox">{imagesBox}</ul>
+                        <Form.Item 
+                          label="商品图片" 
+                        >
+                          <ul className="imgBox">{imagesBox}</ul>
                         </Form.Item>
-
                         <Form.Item label="商品详情">
-                            <div dangerouslySetInnerHTML={{__html:detail}} ></div>
+                          <div dangerouslySetInnerHTML={{__html:detail}} ></div>
                         </Form.Item>                                                                                                                                                        
                       </Form>                                  
                 </div>                
@@ -97,10 +93,11 @@ class ProductDetail extends Component {
     }
 }
 
-const WrappedProductSave = Form.create({ name: 'product' })(ProductDetail)
+const WrappedProductDetail = Form.create({ name: 'product' })(ProductDetail)
 
 //映射属性到组件
 const mapStateToProps = (state) => ({
+    categoryName:state.get('product').get('categoryName'),
     name:state.get('product').get('name'),
     description:state.get('product').get('description'),
     price:state.get('product').get('price'),
@@ -116,4 +113,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(WrappedProductSave)
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedProductDetail)

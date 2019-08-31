@@ -38,7 +38,7 @@ class CategoryList extends Component {
             handleUpdateIsShow 
         } = this.props
         const columns = [{
-                title: '分类名称',
+                title: '分类项',
                 dataIndex: 'name',
                 width:'40%',
                 key: 'name',
@@ -55,7 +55,7 @@ class CategoryList extends Component {
                 />
             },
             {
-                title: '手机分类名称',
+                title: '分类名称',
                 dataIndex: 'mobileName',
                 width:'40%',
                 key: 'mobileName',

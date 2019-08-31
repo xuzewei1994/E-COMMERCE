@@ -2,7 +2,7 @@
 * @Author: TomChen
 * @Date:   2019-08-12 15:11:47
 * @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-21 10:33:54
+* @Last Modified time: 2019-08-21 16:42:47
 */
 import api from 'api'
 import { message } from 'antd'
@@ -70,8 +70,6 @@ export const getSaveAction = (err,values)=>{
         if(hasErr){
             return
         }
-
-        
         let request = api.addProducts
         if(values.id){
             request = api.updateProducts
@@ -98,8 +96,6 @@ export const getSaveAction = (err,values)=>{
                     
     }
 }
-
-
 export const getLevelCategoriesAction = ()=>{
     return (dispatch,getState)=>{
         api.getlevelCategories({
@@ -115,12 +111,10 @@ export const getLevelCategoriesAction = ()=>{
         })              
     }
 }
-
-
 export const getPageAction = (page,keyword)=>{
     return (dispatch,getState)=>{
         dispatch(getPageReqestStartAction())
-         const options = {
+        const options = {
             page:page
         }
         if(keyword){

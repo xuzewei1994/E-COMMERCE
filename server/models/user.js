@@ -1,10 +1,11 @@
-
-
-
-
+/*
+* @Author: TomChen
+* @Date:   2018-08-04 17:14:00
+* @Last Modified by:   Tom
+* @Last Modified time: 2019-07-08 15:55:26
+*/
 const mongoose = require('mongoose');
 const ProductModel = require('./product.js');
-
 const CartItemSchema = new mongoose.Schema({
     product:{
         type:mongoose.Schema.Types.ObjectId,
@@ -22,7 +23,7 @@ const CartItemSchema = new mongoose.Schema({
         type:Boolean,
         default:true
     }
-})
+});
 
 const CartSchema = new mongoose.Schema({
   cartList:{
@@ -37,7 +38,6 @@ const CartSchema = new mongoose.Schema({
     default:0
   }
 })
-
 const ShippingSchema = new mongoose.Schema({
     name:{
         type:String
@@ -58,7 +58,6 @@ const ShippingSchema = new mongoose.Schema({
         type:String
     }
 })
-
 const UserSchema = new mongoose.Schema({
   username:{
   	type:String
@@ -85,7 +84,7 @@ const UserSchema = new mongoose.Schema({
   }
 },{
   timestamps:true
-})
+});
 
 UserSchema.methods.getCart = function(){
     return new Promise((resolve,reject)=>{
@@ -136,7 +135,7 @@ UserSchema.methods.getCart = function(){
             resolve(this.cart);
         })
 
-    })
+    });
 }
 
 //获取当前用户的订单商品列表
@@ -146,7 +145,7 @@ UserSchema.methods.getOrderProductList = function(){
         if(!this.cart){
             resolve({
                 cartList:[]
-            })
+            });
         }
         let checkedCartList = this.cart.cartList.filter(cartItem=>{
           return cartItem.checked;

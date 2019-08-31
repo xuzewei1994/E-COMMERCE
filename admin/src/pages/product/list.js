@@ -1,7 +1,9 @@
-
-
-
-
+/*
+ * @Author: TomChen
+ * @Date:   2019-08-09 15:14:36
+ * @Last Modified by:   TomChen
+ * @Last Modified time: 2019-08-21 17:10:22
+ */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Breadcrumb, Table,Button,Input,InputNumber,Switch,Divider } from 'antd'
@@ -11,6 +13,7 @@ import {
     Link, 
 } from "react-router-dom"
 import Layout from 'common/layout'
+
 import "./index.css"
 import { actionCreator } from './store'
 
@@ -29,8 +32,8 @@ class ProductList extends Component {
             total,
             pageSize,
             handlePage,
-            isFetching,  
-            keyword,           
+            isFetching,
+            keyword,            
             handleUpdateIsShow,
             handleUpdateStatus,
             handleUpdateIsHot,
@@ -46,17 +49,15 @@ class ProductList extends Component {
                         const html =  name.replace(reg,'<b style="color:red;">$1</b>')
                         return <span dangerouslySetInnerHTML={{__html:html}} ></span>
                     }else{
-                        return name 
-                    }
-                    
+                       return name 
+                    } 
                 }
             },
             {
                 title: '是否首页显示',
                 dataIndex: 'isShow',
                 key: 'isShow',
-                render:(isShow,record)=>
-                <Switch 
+                render:(isShow,record)=><Switch 
                     checkedChildren="是" 
                     unCheckedChildren="否" 
                     checked={isShow == '0' ? false : true}
@@ -71,8 +72,7 @@ class ProductList extends Component {
                 title: '上架/下架',
                 dataIndex: 'status',
                 key: 'status',
-                render:(status,record)=>
-                <Switch 
+                render:(status,record)=><Switch 
                     checkedChildren="上架" 
                     unCheckedChildren="下架" 
                     checked={status == '0' ? false : true}
@@ -87,8 +87,7 @@ class ProductList extends Component {
                 title: '是否热卖',
                 dataIndex: 'isHot',
                 key: 'isHot',
-                render:(isHot,record)=>
-                <Switch 
+                render:(isHot,record)=><Switch 
                     checkedChildren="是" 
                     unCheckedChildren="否" 
                     checked={isHot == '0' ? false : true}
@@ -103,8 +102,7 @@ class ProductList extends Component {
                 title: '排序',
                 dataIndex: 'order',
                 key: 'order',
-                render:(order,record)=>
-                <InputNumber 
+                render:(order,record)=><InputNumber 
                     defaultValue={order}
                     onBlur={
                         (ev)=>{
@@ -117,8 +115,7 @@ class ProductList extends Component {
             },
             {
                 title:'操作',
-                render:(text,record)=>
-                <span>
+                render:(text,record)=><span>
                     <Link to={"/product/save/"+record._id}>修改</Link>
                     <Divider type="vertical" />
                     <Link to={"/product/detail/"+record._id}>查看</Link>
@@ -129,19 +126,19 @@ class ProductList extends Component {
         return (
             <div className="ProductList">
              <Layout>
-                <Breadcrumb style={{ margin: '16px 0' }}>
+                 <Breadcrumb style={{ margin: '16px 0' }}>
                   <Breadcrumb.Item>首页</Breadcrumb.Item>
                   <Breadcrumb.Item>商品管理</Breadcrumb.Item>
                   <Breadcrumb.Item>商品列表</Breadcrumb.Item>
                 </Breadcrumb>
                 <div style={{marginBottom:16,height:40}} className='claerfix'>
                     <Search 
-                        placeholder='请输入商品名称关键字'
+                        placeholder="请输入商品名称关键字" 
                         onSearch={
                             value => handlePage(1,value)
-                        }
-                        enterButton
-                        style={{width:300}}
+                        } 
+                        enterButton 
+                        style={{ width: 300 }}
                     />
                     <Link to="/product/save" style={{float:'right'}}>
                         <Button type="primary">
@@ -184,10 +181,9 @@ const mapStateToProps = (state) => ({
     current:state.get('product').get('current'),
     total:state.get('product').get('total'),
     pageSize:state.get('product').get('pageSize'), 
-    isFetching:state.get('product').get('isFetching'),
-    keyword:  state.get('product').get('keyword'),
+    isFetching:state.get('product').get('isFetching'), 
+    keyword: state.get('product').get('keyword'), 
 })
-
 //映射方法到组件
 const mapDispatchToProps = (dispatch) =>({
     handlePage:(page,keyword)=>{
@@ -205,6 +201,7 @@ const mapDispatchToProps = (dispatch) =>({
     handleUpdateOrder:(id,newOrder)=>{
         dispatch(actionCreator.getUpdateOrderAction(id,newOrder))
     },
+              
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList)

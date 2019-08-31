@@ -1,15 +1,15 @@
-
-
-
+/*
+* @Author: Tom
+* @Date:   2018-08-06 09:23:30
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-16 11:32:18
+*/
 const Router = require('express').Router
 
 const UserModel = require('../models/user.js')
 const hmac = require('../util/hmac.js')
 
 const router = Router();
-
-
-
 
 //用户登录
 router.post("/users",(req,res)=>{

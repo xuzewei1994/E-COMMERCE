@@ -2,7 +2,7 @@
  * @Author: TomChen
  * @Date:   2019-08-09 15:14:36
  * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-21 15:13:27
+ * @Last Modified time: 2019-08-21 15:38:20
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
@@ -55,16 +55,14 @@ class ProductSave extends Component {
           price,
           stock,
           detail,
-          mainImage,//封面图片
-          images,//商品图片          
+          mainImage,
+          images,          
           handleMainImage,
           handleImages,
           handleDetail
         } = this.props
-
-        let mainImageFileList = []
+        const mainImageFileList = []
         let imagesFileList = []
-
         if(mainImage){
           mainImageFileList.push({
             uid: '0',
@@ -75,7 +73,6 @@ class ProductSave extends Component {
             }
           })
         }
-
         if(images){
           imagesFileList = images.split(',').map((url,index)=>({
             uid: index,
@@ -86,7 +83,6 @@ class ProductSave extends Component {
             }                       
           }))
         }
-        
         return (
             <Layout>
                  <Breadcrumb style={{ margin: '16px 0' }}>

@@ -1,6 +1,9 @@
-
-
-
+/*
+* @Author: Tom
+* @Date:   2018-08-06 09:23:30
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-16 16:02:18
+*/
 const Router = require('express').Router;
 
 const UserModel = require('../models/user.js');
@@ -30,12 +33,12 @@ router.get('/init',(req,res)=>{
 /*
 router.get('/init',(req,res)=>{
 	const users = []
-	for(let i =0;i<500;i++){
+	for(let i = 0;i<500;i++){
 		users.push({
-			username:"test"+i,
+			username:'test'+i,
 			password:hmac('test'+i),
-			email:"test"+i+"@kuazhu.com",
-			phone:123456789+i
+			email:'test'+i+"@kuazhu.com",
+			phone:13212345+i
 		})
 	}
 	UserModel.insertMany(users)
@@ -48,8 +51,6 @@ router.get('/init',(req,res)=>{
 	})
 })
 */
-
-
 
 //检查用户名是否存在
 router.get("/checkUsername",(req,res)=>{
@@ -156,7 +157,6 @@ router.get('/list',(req,res)=>{
 		res.json({
 			code:0,
 			data:{
-				//分页
 				current:result.current,
 				total:result.total,
 				pageSize:result.pageSize,
