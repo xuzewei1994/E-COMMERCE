@@ -1,14 +1,9 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-12 15:11:47
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-18 16:03:52
-*/
+
+
+
 import api from 'api'
 import { message } from 'antd'
-
 import * as types  from './actionTypes.js'
-
 import { saveUsername } from 'util'
 
 const getPageReqestStartAction = ()=>({

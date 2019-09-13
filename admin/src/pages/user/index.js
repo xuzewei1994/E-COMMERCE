@@ -42,7 +42,9 @@ class User extends Component {
     constructor(props) {
         super(props)
     }
+
     componentDidMount() {
+        //默认获取第一页的数据
         this.props.handlePage(1)
     }
     render() {
@@ -61,14 +63,15 @@ class User extends Component {
             <div className="User">
              <Layout>
                 <Breadcrumb style={{ margin: '16px 0' }}>
-                  <Breadcrumb.Item>首页</Breadcrumb.Item>
-                  <Breadcrumb.Item>用户管理</Breadcrumb.Item>
-                  <Breadcrumb.Item>用户列表</Breadcrumb.Item>
+                    <Breadcrumb.Item>首页</Breadcrumb.Item>
+                    <Breadcrumb.Item>用户管理</Breadcrumb.Item>
+                    <Breadcrumb.Item>用户列表</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="content">
                     <Table 
                         dataSource={dataSource} 
                         columns={columns} 
+                        //分页器
                         pagination={{
                             current:current,
                             total:total,
