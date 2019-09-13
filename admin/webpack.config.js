@@ -9,7 +9,7 @@ const path = require('path')
 
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")//css配置
 
 module.exports = {
     //指定环境
@@ -43,15 +43,6 @@ module.exports = {
     module: {
         rules: [
         //处理css文件
-        /*
-            {
-                test: /\.css$/,
-                use: [
-                  'style-loader',
-                  'css-loader'
-                ]
-            },
-        */
           {
             test: /\.css$/,
             use: [
