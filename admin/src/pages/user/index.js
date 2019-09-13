@@ -1,16 +1,11 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-09 15:14:36
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-16 17:14:58
- */
+
+
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Breadcrumb, Table } from 'antd'
 import moment from 'moment'
-
 import Layout from 'common/layout'
-
 import "./index.css"
 import { actionCreator } from './store'
 
@@ -65,7 +60,7 @@ class User extends Component {
         return (
             <div className="User">
              <Layout>
-                 <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb style={{ margin: '16px 0' }}>
                   <Breadcrumb.Item>首页</Breadcrumb.Item>
                   <Breadcrumb.Item>用户管理</Breadcrumb.Item>
                   <Breadcrumb.Item>用户列表</Breadcrumb.Item>
@@ -73,7 +68,7 @@ class User extends Component {
                 <div className="content">
                     <Table 
                         dataSource={dataSource} 
-                        columns={columns}
+                        columns={columns} 
                         pagination={{
                             current:current,
                             total:total,

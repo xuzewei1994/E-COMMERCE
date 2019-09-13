@@ -1,15 +1,16 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-15 11:48:45
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-15 11:50:18
-*/
+
+
+//保存
 export const saveUsername = (username)=>{
     window.localStorage.setItem('username',username)
 }
+
+//获取
 export const getUsername = ()=>{
     return window.localStorage.getItem('username')
 }
+
+//删除
 export const removeUsername = ()=>{
     window.localStorage.removeItem('username')
 }

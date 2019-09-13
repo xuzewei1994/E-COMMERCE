@@ -1,15 +1,11 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-09 15:14:36
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-16 09:20:35
- */
+
+
+
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Breadcrumb,Card,Row,Col } from 'antd'
-
 import Layout from 'common/layout'
-
 import "./index.css"
 import { actionCreator } from './store'
 
@@ -59,6 +55,7 @@ const mapStateToProps = (state) => ({
     ordernum:state.get('home').get('ordernum'),
     productnum:state.get('home').get('productnum'),    
 })
+
 //映射方法到组件
 const mapDispatchToProps = (dispatch) => ({
     handleCount:()=>{

@@ -1,9 +1,6 @@
-/*
-* @Author: Tom
-* @Date:   2019-04-11 11:51:35
-* @Last Modified by:   Tom
-* @Last Modified time: 2019-07-11 10:35:40
-*/
+
+
+
 import axios from 'axios'
 import * as types from './actionTypes.js'
 import {message} from 'antd'

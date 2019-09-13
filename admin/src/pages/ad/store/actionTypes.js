@@ -1,9 +1,6 @@
-/*
-* @Author: Tom
-* @Date:   2019-04-11 11:46:12
-* @Last Modified by:   Tom
-* @Last Modified time: 2019-07-11 10:36:57
-*/
+
+
+
 export const SET_IMAGE = 'ad/SET_IMAGE'
 export const SAVE_REQUEST = 'ad/SAVE_REQUEST';
 export const SAVE_DONE = 'ad/SAVE_DONE';

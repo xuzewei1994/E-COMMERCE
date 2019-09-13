@@ -1,15 +1,10 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-09 15:14:36
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-28 17:07:00
- */
+
+
+
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
 import { Layout, Menu, Icon } from 'antd';
 const { Sider } = Layout;
-
-
 import "./index.css"
 
 class AdminSider extends Component {

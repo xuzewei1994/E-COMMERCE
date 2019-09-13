@@ -1,9 +1,6 @@
-/*
-* @Author: Tom
-* @Date:   2019-04-17 16:11:21
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-22 22:16:17
-*/
+
+
+
 import React, { Component } from 'react'
 import {
   Form, Input,  Select, Row, Col,  Button,Breadcrumb,InputNumber

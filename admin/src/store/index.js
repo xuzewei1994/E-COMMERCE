@@ -1,9 +1,6 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-12 10:11:52
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-12 17:46:49
-*/
+
+
+
 import { createStore,applyMiddleware } from 'redux'
 
 import thunk from 'redux-thunk'

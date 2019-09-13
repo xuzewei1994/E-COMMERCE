@@ -1,18 +1,11 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-15 16:55:33
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-16 11:17:55
-*/
+
+
+
 import React, { Component } from 'react'
-
 import api from 'api'
-
 import { Layout, Menu, Icon, Dropdown } from 'antd'
 const { Header } = Layout;
-
 import { getUsername,removeUsername } from 'util'
-
 import "./index.css"
 
 class AdminHeader extends Component {
@@ -28,18 +21,6 @@ class AdminHeader extends Component {
                 window.location.href = '/login'
             }
         })
-        /*
-        axios({
-            method: 'delete',
-            url:'http://127.0.0.1:3000/sessions/users',
-        })
-        .then(result=>{
-            if(result.data.code == 0){
-                removeUsername()
-                window.location.href = '/login'
-            }
-        })
-        */
     }
     render() {
         const menu = (
@@ -53,7 +34,7 @@ class AdminHeader extends Component {
             <div className="AdminHeader">
                 <Header className="header">
                   <div className="logo">
-                    KMALL
+                    E-COMMERCE
                   </div>
                     <Dropdown overlay={menu} trigger={['click']}>
                         <a className="ant-dropdown-link" href="#">
