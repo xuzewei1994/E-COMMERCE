@@ -1,9 +1,6 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-12 15:11:47
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-19 09:30:28
-*/
+
+
+
 import api from 'api'
 import { message } from 'antd'
 
@@ -28,13 +25,14 @@ const setCategoriesAction = (payload)=>({
     payload
 })
 
-export const getAddAction = (values)=>{
-    return (dispatch,getState)=>{
+export const getAddAction = (values) => {
+    return (dispatch,getState) => {
         api.addCategories(values)
-        .then(result=>{
+        .then(result => {
             if(result.code == 0){
                 message.success('添加分类成功')
                 dispatch(setCategoriesAction(result.data))
+                window.location.href = './category'
             }else{
                 message.error(result.message)
             }
@@ -45,10 +43,11 @@ export const getAddAction = (values)=>{
         })              
     }
 }
+//获取分类数组的数据
 export const getLevelCategoriesAction = ()=>{
     return (dispatch,getState)=>{
         api.getlevelCategories({
-            level:2
+            level:3
         })
         .then(result=>{
             if(result.code == 0){
@@ -83,7 +82,7 @@ export const getPageAction = (page)=>{
 }
 export const getUpdateNameAction = (id,newName)=>{
     return (dispatch,getState)=>{
-        const page = getState().get('category').get('current')
+        const page = getState().get('category').get('current')//获取页码
         api.updateCategoriesName({
             id:id,
             name:newName,
@@ -91,7 +90,7 @@ export const getUpdateNameAction = (id,newName)=>{
         })
         .then(result=>{
             if(result.code == 0){
-                message.success('更新分类名称成功')
+                message.success('更新分类项成功')
                 dispatch(getSetPageAction(result.data))
             }else{
                 message.error(result.message)
@@ -112,7 +111,7 @@ export const getUpdateMobileNameAction = (id,newMobileName)=>{
         })
         .then(result=>{
             if(result.code == 0){
-                message.success('更新手机分类名称成功')
+                message.success('更新分类名称成功')
                 dispatch(getSetPageAction(result.data))
             }else{
                 message.error(result.message)

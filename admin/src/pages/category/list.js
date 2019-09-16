@@ -1,9 +1,7 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-09 15:14:36
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-21 09:58:48
- */
+
+
+
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Breadcrumb, Table,Button,Input,InputNumber,Switch } from 'antd'
@@ -12,7 +10,6 @@ import {
     Link, 
 } from "react-router-dom"
 import Layout from 'common/layout'
-
 import "./index.css"
 import { actionCreator } from './store'
 
@@ -37,10 +34,11 @@ class CategoryList extends Component {
             handleUpdateOrder,
             handleUpdateIsShow 
         } = this.props
+
         const columns = [{
-                title: '分类项',
+                title: '客户端分类名称',
                 dataIndex: 'name',
-                width:'40%',
+                width:'30%',
                 key: 'name',
                 render:(name,record)=><Input 
                     style={{width:'60%'}}
@@ -48,6 +46,7 @@ class CategoryList extends Component {
                     onBlur={
                         (ev)=>{
                             if(ev.target.value != name){
+                                //更新记录的名称，记录的id，新的名称
                                 handleUpdateName(record._id,ev.target.value)    
                             }
                         }
@@ -55,9 +54,9 @@ class CategoryList extends Component {
                 />
             },
             {
-                title: '分类名称',
+                title: '移动端分类名称',
                 dataIndex: 'mobileName',
-                width:'40%',
+                width:'30%',
                 key: 'mobileName',
                 render:(mobileName,record)=><Input 
                     style={{width:'60%'}}
@@ -101,8 +100,10 @@ class CategoryList extends Component {
                     }
                 />                 
             },
-        ]        
-        const dataSource = list.toJS()        
+        ]   
+
+        const dataSource = list.toJS()    
+
         return (
             <div className="CategoryList">
              <Layout>

@@ -1,9 +1,6 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-09 15:14:36
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-18 11:24:05
- */
+
+
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { actionCreator } from './store'
@@ -25,6 +22,7 @@ class CategoryAdd extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
+        //对表单进行验证
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 this.props.handleAdd(values)
@@ -43,6 +41,7 @@ class CategoryAdd extends Component {
                 </Breadcrumb>
                 <div className="content">
                     <Form labelCol={{ span: 5 }} wrapperCol={{ span: 12 }} >
+
                         <Form.Item label="父级分类">
                           {getFieldDecorator('pid', {
                             rules: [{ required: true, message: '请选择父级分类' }],
@@ -58,23 +57,27 @@ class CategoryAdd extends Component {
                               }
                             </Select>,
                           )}
-                        </Form.Item>                    
-                        <Form.Item label="分类名称">
+                        </Form.Item> 
+
+                        <Form.Item label="客户端分类名称">
                           {getFieldDecorator('name', {
-                            rules: [{ required: true, message: '请输入分类名称' }],
+                            rules: [{ required: true, message: '请输入客户端分类名称' }],
                           })(<Input />)}
                         </Form.Item>
-                        <Form.Item label="手机分类名称">
+
+                        <Form.Item label="移动端分类名称">
                           {getFieldDecorator('mobileName', {
-                            rules: [{ required: true, message: '请输入手机分类名称' }],
+                            rules: [{ required: true, message: '请输入手机端分类名称' }],
                           })(<Input />)}
-                        </Form.Item>                        
+                        </Form.Item>       
+
                         <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
                           <Button type="primary" onClick={this.handleSubmit}>
                             提交
                           </Button>
                         </Form.Item>
-                      </Form>                                  
+
+                    </Form>                                  
                 </div>                
             </Layout>
         )
@@ -89,6 +92,7 @@ const mapStateToProps = (state) => ({
 })
 //映射方法到组件
 const mapDispatchToProps = (dispatch) => ({
+  //发送表单数据
     handleAdd:(values)=>{
         dispatch(actionCreator.getAddAction(values))
     },
