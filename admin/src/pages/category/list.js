@@ -40,6 +40,7 @@ class CategoryList extends Component {
                 dataIndex: 'name',
                 width:'30%',
                 key: 'name',
+                //当前行的值，当前行数据，行索引，
                 render:(name,record)=><Input 
                     style={{width:'60%'}}
                     defaultValue={name}
