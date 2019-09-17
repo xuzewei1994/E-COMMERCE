@@ -1,9 +1,6 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-21 17:42:33
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-23 15:22:54
- */
+
+
+
 require('pages/common/logo')
 require('pages/common/footer')
 
@@ -54,24 +51,6 @@ var page = {
         if (validateResult.status) {
             formErr.hide()
             //3.发送请求
-            /*
-            $.ajax({
-                url:'/sessions/users',
-                method:'post',
-                data:formData,
-                dataType:'json',
-                success:function(result){
-                    if(result.code == 0){
-                        window.location.href = "/"
-                    }else{
-                       formErr.show(result.message) 
-                    }
-                },
-                error:function(err){
-                    formErr.show('网络错误,请稍后再试')
-                }
-            })
-            */
             api.login({
                 data: formData,
                 success:function(data) {
@@ -81,7 +60,6 @@ var page = {
                     formErr.show(msg) 
                 }
             })
-
         }
         //验证失败
         else {

@@ -1,9 +1,6 @@
-/*
- * @Author: TomChen
- * @Date:   2019-08-21 17:42:33
- * @Last Modified by:   TomChen
- * @Last Modified time: 2019-08-23 15:10:25
- */
+
+
+
 require('pages/common/nav')
 require('pages/common/search')
 var _side = require('pages/common/side')
@@ -18,7 +15,7 @@ var api = require('api')
 var page = {
     init: function() {
         this.renderSide()
-        this.loadUserinfo()  
+        this.loadUserinfo()//加载用户信息
     },
     renderSide:function(){
         _side.render('user-center')

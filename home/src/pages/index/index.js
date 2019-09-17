@@ -1,9 +1,7 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-21 17:42:33
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-23 17:59:04
-*/
+
+
+
+
 import Swiper from 'swiper'
 require('pages/common/nav')
 require('pages/common/search')

@@ -15,6 +15,7 @@
 }
 .side-item{
     height: 30px;
+    margin-top: 20px;
     line-height: 30px;
     box-sizing: border-box;
     padding-left: 20px;
@@ -23,6 +24,8 @@
     color: #f21;
 }
 .side-item.active{
+    background-color: #ccc;
+    font-size: 16px;
     border-right: 2px solid #f21;
 }
 
@@ -33,4 +36,12 @@
     background-color: #fff;
     box-sizing: border-box;
     padding: 20px;
+}
+.form-item{
+    background-color: #ccc;
+    margin-top: 20px;
+}
+.label-item{
+    font-size: 16px;
+    color: #f21;
 }

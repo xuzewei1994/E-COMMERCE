@@ -1,9 +1,5 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-23 11:12:04
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-23 11:49:31
-*/
+
+
 require('./index.css')
 var _util = require('util')
 var tpl = require('./index.tpl')
@@ -15,6 +11,7 @@ var list = [
 ]
 module.exports = {
     render:function(name){
+        //进行查找
         list.find(function(item){
             return item.name == name
         }).isActive = true

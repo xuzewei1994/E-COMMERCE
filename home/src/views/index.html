@@ -9,8 +9,25 @@
 <body>
     <%= require('html-loader!./common/nav.html') %>
     <%= require('html-loader!./common/search.html') %>
+<!-- 商品分类开始 -->
+    <div class="nav-main">
+        <div class="container">
+            <ul>
+                <li class="nav-main-item"><a class="link" href="#">秒杀</a></li>
+                <li class="nav-main-item"><a class="link" href="#">拍卖</a></li>
+                <li class="nav-main-item"><a class="link" href="#">E淘服饰</a></li>
+                <li class="nav-main-item"><a class="link" href="#">E淘超市</a></li>
+                <li class="nav-main-item"><a class="link" href="#">生鲜</a></li>
+                <li class="nav-main-item"><a class="link" href="#">E淘金融</a></li>
+            </ul>
+        </div>
+    </div>
+<!-- 商品分类结束 -->
     <div class="focus">
         <div class="container clearfix">
+            <a href="#" class="category-title">
+                <i class="fa fa-list" aria-hidden="true">&nbsp&nbsp&nbsp全部分类</i>
+            </a>
             <ul class="categories">
                 <!--
                 <li class="keyowrd-item">
