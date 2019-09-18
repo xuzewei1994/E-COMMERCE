@@ -52,10 +52,11 @@ var page = {
         })
         //3.添加购物车
         this.$elem.on('click','.add-cart-btn',function(){
+            //向后台接口发送请求
             api.addCarts({
                 data:{
                     productId:_this.productsDetailPrarms.id,
-                    count:$('.count-input').val()
+                    count:$('.count-input').val()//购买的件数
                 },
                 success:function(){
                     _util.goResult('addCart')

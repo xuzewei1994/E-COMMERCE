@@ -1,9 +1,7 @@
-/*
-* @Author: TomChen
-* @Date:   2019-08-21 17:42:33
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-08-25 16:58:38
-*/
+
+
+
+
 require('pages/common/nav')
 require('pages/common/search')
 require('pages/common/footer')
@@ -24,7 +22,7 @@ var page = {
     init:function(){
         this.initPagination()
         this.bindEvent()
-        this.loadProductList()
+        this.loadProductList()//加载商品列表
     },
     initPagination:function(){
         var _this = this
