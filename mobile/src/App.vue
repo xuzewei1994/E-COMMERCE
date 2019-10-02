@@ -2,7 +2,7 @@
 <template>
     <div id="app">
         <router-view></router-view>
-        <TabBar />
+        <!-- <TabBar /> -->
     </div>
 </template>
 
@@ -20,5 +20,6 @@
 </script>
 
 <!--样式-->
-<style lang="less">
+<style lang="scss">
+
 </style>
